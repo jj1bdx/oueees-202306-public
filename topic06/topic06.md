@@ -116,7 +116,7 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 
 ---
 
-# What Russo-Ukraine War has revealed so far as of June 2022
+# What Russo-Ukraine War has revealed so far as of June 2023
 
 ---
 
@@ -163,6 +163,20 @@ Using a strong end-to-end encryption such as OpenPGP and GnuPG is a plus (though
 ---
 
 # TLDR: your radiowave emission can be monitored by unwanted and untrusted people and can be exploited and used against you at any time. You have been warned.
+
+---
+
+# Social engineering: how to *lie*
+
+Fake photographs are all around from the beginning of the war [^4] and it's continuing [^5]: *old images and videos are falsely quoted* as the ongoing ones
+
+Claiming something without evidence and related facts are so common among all stakeholders of the war, and this is how war propaganda is conducted; see what Japan had done in World War II [^6]
+
+[^4]: BBC News, 25 February 2022, [Ukraine conflict: Further false images shared online](https://www.bbc.com/news/60528276)
+
+[^5]: France24.com, 06/06/2023, [Nova Kakhovka dam breach: Old image resurfaces to falsely illustrate today's damage](https://www.france24.com/en/tv-shows/truth-or-fake/20230606-nova-kakhovka-dam-breach-old-image-resurfaces-to-falsely-illustrate-today-s-damage)
+
+[^6]: Wikipedia contributors, [Propaganda in Japan during the Second Sino-Japanese War and World War II](https://en.wikipedia.org/w/index.php?title=Propaganda_in_Japan_during_the_Second_Sino-Japanese_War_and_World_War_II&oldid=1158927730), Wikipedia, The Free Encyclopedia, 7 June 2023, 03:40 UTC [accessed 13 June 2023]
 
 ---
 
