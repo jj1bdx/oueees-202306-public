@@ -4,8 +4,10 @@ slidenumbers: true
 autoscale: true
 
 # oueees-202306 topic 06:
-# Wireless/radio and internet
-# Information warfare and radio surveillance
+# [fit] 
+# [fit] Wireless/radio and internet
+# [fit] Information warfare and radio surveillance
+# [fit] "Artificial Intelligence" and the reality
 
 <!-- Use Deckset 2.0, 16:9 aspect ratio -->
 
@@ -166,7 +168,7 @@ Using a strong end-to-end encryption such as OpenPGP and GnuPG is a plus (though
 
 ---
 
-# Social engineering: how to *lie*
+# Wartime social engineering: how to *lie*
 
 Fake photographs are all around from the beginning of the war [^4] and it's continuing [^5]: *old images and videos are falsely quoted* as the ongoing ones
 
@@ -177,6 +179,75 @@ Claiming something without evidence and related facts are so common among all st
 [^5]: France24.com, 06/06/2023, [Nova Kakhovka dam breach: Old image resurfaces to falsely illustrate today's damage](https://www.france24.com/en/tv-shows/truth-or-fake/20230606-nova-kakhovka-dam-breach-old-image-resurfaces-to-falsely-illustrate-today-s-damage)
 
 [^6]: Wikipedia contributors, [Propaganda in Japan during the Second Sino-Japanese War and World War II](https://en.wikipedia.org/w/index.php?title=Propaganda_in_Japan_during_the_Second_Sino-Japanese_War_and_World_War_II&oldid=1158927730), Wikipedia, The Free Encyclopedia, 7 June 2023, 03:40 UTC [accessed 13 June 2023]
+
+---
+
+# Finding the truth where totally conflicted views are presented [^7]
+
+* Check credentials: do the background check of the author
+* Look for the bias in the presented views and your own detection bias
+* Evaluate the source: reputation of the past publishing
+* Apply critical thinking: questioning ideas and assumptions
+* Consider relativistic reasoning than pursuing singular truth
+
+[^7]: A summary of [an answer by perplexity.ai with the question "Can you tell me how to find the truth where totally conflicted views are presented?"](https://www.perplexity.ai/search/00018c73-c45c-46f7-81fa-bd78c2301286)
+
+---
+
+# "Artificial Intelligence (AI)"
+# and the reality
+
+---
+
+# Fundamental question: 
+# is intelligence only for human?
+
+---
+
+# AI as a buzzword in computer science (1/2) [^8]
+
+* LISP and "symbolic" (text) processing (1950s)
+* AI Winter in the 1970s
+* Logic programming / expert systems (1980s)
+ - Japan: The Fifth Generation Computer Systems (1982-1994)
+* AI Winter in the 1990s
+
+[^8]: Wikipedia contributors, [History of artificial intelligence](https://en.wikipedia.org/w/index.php?title=History_of_artificial_intelligence&oldid=1159316271), Wikipedia, The Free Encyclopedia, 9 June 2023, 15:53 UTC [accessed 13 June 2023]
+
+
+---
+
+# AI as a buzzword in computer science (2/2) [^8]
+
+* Breakthrough made by large-scale computing
+  - Internet, massive parallelism, cloud computing
+* Since 2010s: generative AI
+  - Machine learning -> deep learning
+  - Massive "big data" from the internet
+  - Large language models (LLMs) (e.g., GPT-4, ChatGPT)
+
+---
+
+# The (non-)goals of current AI
+
+* *Non-deterministic* problem solving
+  - Probabilistic answers computed by neural networks
+  - Questionable reproducibility
+  - *Errors may quite often occur*
+* *No one really knows why* LLMs work and what they actually do
+  - You cannot *fully logically* explain the behavior
+
+---
+
+# Generative AI can only assume answers
+
+* Don't: expect the definitive answers
+* Do: treat the output as the *synthesized* summary
+  - The behavior is limited by the *given data*
+  - Prompting (directives by words) largely affects the output
+* Do: review the output by yourself
+* *Don't: blindly believe the answers!*
+* *Also don't: use the output without proper citation*
 
 ---
 
