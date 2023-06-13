@@ -30,10 +30,10 @@ Talk topics listed (but not limited to):
 * 03: IP addresses / Routing in details / Network transports
 * 04: Cloud computing basics / Social implication of cloud computing
 * 05: Network fault-tolerance / Network services and programming trends
-* 06: Wireless/radio and internet / Information warfare and radio surveillance
+* 06: Wireless/radio and internet / Information warfare and radio surveillance / "Artificial Intelligence" and the reality
 * 07: Outro: reference books, career choice, and lessons learned in my life
 
-Original keywords of this lecture:
+Keywords of this lecture:
 
 * Latency and speed of light
 * Encapsulation, serialization, and marshalling
@@ -45,6 +45,7 @@ Original keywords of this lecture:
 * Cloud computing .vs. endpoint computing
 * Sharing .vs. message passing
 * Centralization .vs. decentralization
+* Deterministic computation .vs. statistic estimation
 
 ## License
 

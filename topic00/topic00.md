@@ -53,23 +53,38 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 
 ---
 
-# [fit] COVID-19
-# [fit] has changed
-# [fit] everything
-# [fit] ... and is still there!
+## It's already June 2023, but
+# [fit] *COVID-19 is still there*
+## [fit] I've suffered from COVID-19 on July 2022
+## [fit] It's horrible, painful, and persistent for months
+
+---
+
+# [fit] To prevent COVID-19 outbreak again:
+## [fit] Practice basic hygiene procedures
+## Wash your hands
+## Minimize the virus exposure
+## Get vaccinated
+## Wear masks whenever required
 
 ---
 
 # [fit] Since 24-FEB-2022:
 # [fit] WAR on Ukraine
 # [fit] by Russian full invasion against the democracy
+# [fit] and *Japan has already engaged in the war*
 
 ---
 
-# [fit] Since 24-FEB-2022:
-# [fit] WAR on Ukraine
-# [fit] by Russian full invasion against the democracy
-# [fit] and **Japan has already engaged in**
+# As of June 2023, Japan has most deeply committed in the military and peace-keeping activities on regional conflicts since 1952
+
+---
+
+# The levels of tension in the regional conflicts which Japan is engaged in are rising to much higher levels than those in the cold war during 1945-1991
+
+---
+
+# We need to revise our understating of how the world is built and formed
 
 ---
 
@@ -89,23 +104,34 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 
 ---
 
+# [Fit] Recognition of the Western nations including Japan:
 # [fit] Digital-first society has come
 # [fit] Internet is infrastructure
 # [fit] Software builds the world
 
 ---
 
-# [fit] Physical ubiquity matters:
-# [fit] Broken supply chains
-# [fit] Weak infrastructures kill people
-# [fit] Natural resources are *limited*
+# In reality:
+# [fit] Physical ubiquity matters
+# [fit] i.e., we need ample supplies of daily necessities
+# [fit] to keep the software world running smoothly!
 
 ---
 
-# [fit] In the meanwhile:
-# [fit] Oppressions everywhere
-# [fit] by people with power
-# [fit] to enslave oppressed people
+![original,fit](matt-palmer-kbTp7dBzHyY-unsplash.jpg)
+
+# [fit] Infrastructure crises
+
+## [fit]
+## [fit] Broken supply chains: food, semiconductors
+## [fit] Limited natural resources: crude oil, natural gas
+## [fit] Global warming and water/electricity shortages
+## [fit]
+## [fit] *Are we heading into the apocalypse?*
+
+---
+
+# Cruelty and inequality going on everywhere by people with power to enslave oppressed and marginalized people
 
 ---
 
@@ -148,13 +174,18 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 
 # [fit] 2022
 # [fit] War on Ukraine
-# [fit] by Russian full invasion against the democracy
+
+---
+
+# [fit] We need to survive
+# [fit] in the global warzone
 
 ---
 
 # [fit] Safety first
 # [fit] Stay alive
 # [fit] Get out of slavery
+# [fit] Prevent slavery
 
 ---
 
@@ -187,14 +218,24 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 
 # My career
 
-Erlang, Elixir, C, FreeBSD, Linux, TCP/IP, PHP, mruby, Lua, C++, C#, Visual Studio, Moodle, macOS, Windows, Vim, VS Code, Arduino, AVR, radio engineering, music, distributed systems, fault tolerance, software defined radio, Python, R, machine learning apprentice, whatever.
+Erlang, Elixir, C, FreeBSD, Linux, TCP/IP, PHP, mruby, Lua, C++, C#, Visual Studio, Moodle, macOS, Windows, Vim, VS Code, Arduino, AVR, radio engineering, music, distributed systems, fault tolerance, software defined radio, Python, R, machine learning and deep learning apprentice, whatever.
 
-32 years in Computer Science, 17 years since PhD, 46 years of ham radio op as @jj1bdx, 2010-2012: Professor, ACCMS/IIMC, Kyoto University, ACM Senior Member, whatever.
+33 years in Computer Science, 18 years since PhD, 47 years of ham radio op as @jj1bdx, 2010-2012: Professor, ACCMS/IIMC, Kyoto University, ACM Senior Member, whatever.
 
 ---
 
-# [fit] Past records are meaningless, unless:
-# [fit] *you work on what you really want to do now*
+# My recent career:
+
+## [fit] I've got laid off on June 2013
+## [fit] 10 years of ongoing survival
+## [fit] as an independent IT consultant
+## [fit] and a *software engineer*
+
+---
+
+# [fit] Past records are meaningless
+# [fit] You need to live your life and earn money
+# [fit] ... then you can work on what you really want to do
 
 ---
 
@@ -210,6 +251,9 @@ Erlang, Elixir, C, FreeBSD, Linux, TCP/IP, PHP, mruby, Lua, C++, C#, Visual Stud
 
 # Lecture theme:
 # [fit] Information delivery on internet
+
+---
+
 # In other words:
 # [fit] How internet works
 
@@ -271,6 +315,7 @@ Erlang, Elixir, C, FreeBSD, Linux, TCP/IP, PHP, mruby, Lua, C++, C#, Visual Stud
 * Network services and programming trends
 * Wireless/radio and internet
 * Information warfare and radio surveillance
+* "Artificial Intelligence" and the reality
 * Reference books
 * Career choice
 
@@ -291,6 +336,7 @@ Erlang, Elixir, C, FreeBSD, Linux, TCP/IP, PHP, mruby, Lua, C++, C#, Visual Stud
 # Picture credits:
 
 * My photo: by Suzuki Shin, at 鈴木心写真館, courtesy [Wantedly Official Profile](https://www.wantedly.com/id/jj1bdx)
+* Bushfires below Stacks Bluff, Tasmania, Australia: Matt Palmer, from Unsplash, <https://unsplash.com/photos/kbTp7dBzHyY>  
 * Black Lives Matter: Nicole Baster, from Unsplash, <https://unsplash.com/photos/6_y5Sww0-h4>
 * Stop Asian Hate: Jason Leung, from Unsplash, <https://unsplash.com/photos/WAch7jpfk8U>
 * Kyiv (on October 2020): Viktor Talashuk, from Unsplash, <https://unsplash.com/photos/iMhFpP0laGw>
