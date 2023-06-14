@@ -194,13 +194,13 @@ Claiming something without evidence and related facts are so common among all st
 
 ---
 
-# "Artificial Intelligence (AI)"
+# "Artificial Intelligence" (AI)
 # and the reality
 
 ---
 
 # Fundamental question: 
-# is intelligence only for human?
+# *is intelligence only for human?*
 
 ---
 
