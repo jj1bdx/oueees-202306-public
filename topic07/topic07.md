@@ -3,7 +3,7 @@ footer: Kenji Rikitake / oueees 20230620 topic07
 slidenumbers: true
 autoscale: true
 
-# oueees-202206 topic 07:
+# oueees-202306 topic 07:
 # Reference for further study
 # Choosing your career and professionality
 
