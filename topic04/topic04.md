@@ -40,14 +40,6 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 
 ---
 
-# Errata on Topic 03:
-# TCP is *Transmission Control Protocol (RFC793)* [^0]
-## I regret the error. I'm very sorry.
-
-[^0]: See also <https://www.ietf.org/archive/id/draft-ietf-tcpm-rfc793bis-28.html>
-
----
-
 # [fit] Cloud computing basics
 
 ---
@@ -157,6 +149,7 @@ A physical server is separated into multiple virtual machines
 * Nazi Germany [^3]
 * Empire of Japan [^4] (Japan in 1868-1947)
 * Soviet Union [^5] 
+* ... you can pick up many nations currently existing
 
 [^3]: <https://en.wikipedia.org/wiki/Nazi_Germany>
 
