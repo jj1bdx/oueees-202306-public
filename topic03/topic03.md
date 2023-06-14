@@ -268,8 +268,11 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 # UDP and TCP
 
 * Two major transport protocols on the internet
-* User Datagram Protocol (UDP): connection-less
-* Transport Control Protocol (TCP): connection-oriented
+* User Datagram Protocol (UDP, RFC 768): connection-less
+* Transport Control Protocol (TCP, RFC 9293): connection-oriented
+  - Obsoleted RFCs: 793, 879, 2873, 6093, 6429, 6528, 6691
+* See <https://www.rfc-editor.org> for all the internet RFCs
+* RFC: Request for Comment
 
 ---
 
@@ -334,10 +337,10 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 # Web: HTTP/3: HTTP2 over QUIC
 
 * People wants *speed* and *smaller latency*
-* HTTP/2 (RFC7540): TCP-bound, stream aggregation and content compression
-* QUIC (RFC9000): UDP-based, tightly integrated to HTTP/2 and specific congestion control
+* HTTP/2 (RFC 7540): TCP-bound, stream aggregation and content compression
+* QUIC (RFC 9000): UDP-based, tightly integrated to HTTP/2 and specific congestion control
 * HTTP/2 had *head-of-line blocking problem* by TCP
-* HTTP/3 (RFC9114): HTTP/2 over QUIC (supported by most browsers already)
+* HTTP/3 (RFC 9114): HTTP/2 over QUIC (supported by most browsers already)
 
 ---
 
