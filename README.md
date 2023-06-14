@@ -41,7 +41,7 @@ Keywords of this lecture:
 * Synchronization in the asynchronous world
 * IP address and the hierarchical routing
 * Routing information dissemination protocols (RIP, OSPF, BGP)
-* Connection-oriented .vs. connection-less protocols (TCP, UDP, HTTP/2 .vs. QUIC)
+* Connection-oriented .vs. connection-less protocols (TCP, UDP, HTTP/3)
 * Cloud computing .vs. endpoint computing
 * Sharing .vs. message passing
 * Centralization .vs. decentralization
