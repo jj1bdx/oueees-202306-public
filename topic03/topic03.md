@@ -110,19 +110,20 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 ---
 
 # [fit] IPv6 addresses: 128 bits
-# [fit] 2404:6800:4004:823::2004
-# [fit] = 2404:6800:400a:0823:0000:0000:0000:2004
+# [fit] 2404:6800:4004:810::2004
+# [fit] = 2404:6800:400a:0810:0000:0000:0000:2004
 
-* a www.google.com address, as of 14-JUN-2022 0711UTC
+* a www.google.com address, as of 14-JUN-2023 0117UTC
 * :xxxx: = up to 4 hex digits
 * :: = arbitrary number of 0, appearing only once in an address
+* Your lookup results may vary
 
 ---
 
 # [fit] IPv6 addresses with netmask
-# [fit] 2404:6800:400a:823::2004/64
+# [fit] 2404:6800:400a:810::2004/64
 
-* Network: 2404:6800:400a:823::/64
+* Network: 2404:6800:400a:810::/64
 * Host number: 0x0000000000002004
 * Host number: 64 bits (0: network)
 * Broadcast -> multicast addresses
