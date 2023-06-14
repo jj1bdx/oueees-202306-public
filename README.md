@@ -6,9 +6,9 @@
 
 ## Talk style / 講義のスタイル
 
-Since 2020, I've been delivering the lectures in asynchronous format as a series of videos this year. This repository contains the copy of the slide sets used in the lecture series.
+Since 2020, I've been delivering the lectures in asynchronous format as a series of videos. This repository contains the copy of the slide sets used in the lecture series.
 
-2020年以来、本講義は一連のビデオの集まりとして行っています。このレポジトリでは講義で使うスライドの写しおよびその他の関連資料を提供します。
+2020年以来、本講義は非同期形式で一連のビデオの集まりとして行っています。このレポジトリでは講義で使うスライドの写しおよびその他の関連資料を提供します。
 
 * スライドは英語 / All slides are in English
 * 講義は日本語 / The lectures/talks are in Japanese
