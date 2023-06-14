@@ -1,4 +1,4 @@
-# README for the lecture/talk series at Osaka University, June 2022
+# README for the lecture/talk series at Osaka University, June 2023
 
 * 大阪大学 基礎工学部 電気工学特別講義 2023年度
 * Kenji Rikitake / 力武 健次
