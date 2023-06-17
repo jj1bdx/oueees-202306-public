@@ -171,12 +171,16 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 
 # [fit] Routing in details
 
+^ ここからは経路制御の細かい話をします。
+
 ---
 
 <!-- talk contents here -->
 [.background-color: #FFFFFF]
 
 ![original fit](routing.jpg)
+
+^ 図のような7つのノードが接続されたネットワークを考えます。
 
 ---
 
@@ -186,15 +190,21 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 - Works well on simple networks or star networks
 - Static routing may cause *ping-pong*
 
+^ 静的経路制御あるいはスタティックルーティングで経路を決めることを考えます。具体的には直接接続されていないネットワークに対して送信するときは、とりあえず既定値あるいはデフォルトの経路を決めて送信します。
+
 ---
 [.background-color: #FFFFFF]
 
 ![original fit](routing-static.jpg)
 
+^ この図ではデフォルト経路は右回り隣のノードに送信しています。このやり方は簡単なネットワーク、特にスター型ではうまく機能しますが、場合によってはパケットがピンポンして無限ループを起こしてしまうことがあります。
+
 ---
 [.background-color: #FFFFFF]
 
 ![original fit](routing-static-failed.jpg)
+
+^ この図ではBが左回りにデフォルト経路を設定しているため、AがGにパケットを送信しようとすると、GはAにもBにもつながっていないため、それぞれのデフォルト経路でAからBへ、BからAへとパケットが無限ループしてしまいます。
 
 ---
 
@@ -204,11 +214,15 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 - Link cost: determined by the speed and quality
 - Administrative policies
 
+^ スタティックな経路制御ではうまくいかない場合もあることがわかりました。そこで何らかの形で経路を決定するアルゴリズムを考えてみます。一般的なやり方としては、ノード間の中継数あるいはホップ数を数えたり、ノード間のリンクに対して速度や品質を反映したコストを設定して積算したりする方法があります。また、あらかじめ管理方針を決めて制限するというやり方もあります。このような動的な経路制御では、ネットワーク全域で経路情報を共有するというやり方をします。
+
 ---
 
 # Simple hop counting
 
 - Assume every link costs the same with each other
+
+^ 単純にホップ数を数えるやり方を考えてみましょう。これはそれぞれのリンクのコストが同じ場合に、最小コストの経路を求めよという問題と同値になります。
 
 ---
 
@@ -216,6 +230,7 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 
 ![original fit](routing-cost1.jpg)
 
+^ 図の場合で考えてみると、AからGへの最小コスト経路は、A-B-C-Gでコストが30になります。A-D-E-F-Gは、コストが40で、次にコストの少ない経路となります。
 
 ---
 
@@ -224,15 +239,21 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 - What if the cost of each link varies?
 - If two or more paths have the equal cost, all of the links will be utilized for load balancing
 
+^ ここでコストをどう設定あるいは評価するかについて考えてみます。それぞれのリンクのコストが違っていたら最適経路は変わります。また、2つ以上の経路が同じコストであれば、それらを同じように使うことで、各ノードの負荷を抑えることもできます。
+
 ---
 [.background-color: #FFFFFF]
 
 ![original fit](routing-cost2.jpg)
 
+^ この図ではそれぞれの経路のリンクのコストを変えてあります。
+
 ---
 [.background-color: #FFFFFF]
 
 ![original fit](routing-cost2-multipath.jpg)
+
+^ コストを積算してみると、A-B-C-Gのコストは70, A-B-C-F-Gのコストも70、A-D-E-F-Gのコストも70となります。このコスト情報が7つのノードに行き渡っていれば、Aはこの3つの経路を同じコストとして判定して使い分けることができるようになります。
 
 ---
 
@@ -241,23 +262,30 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 - What if the link suddenly degrades or is disconnected?
 - Largely increasing the cost of degraded or disconnected links will give an easy solution
 
+^ リンクの速度やエラー率などの品質が悪化したり、切断して障害が発生した場合を考えてみます。これらの事象をリンクコストを使った経路制御に反映するには、該当するリンクのコストを大幅に上げるのが効果的な方法の一つです。
+
 ---
 [.background-color: #FFFFFF]
 
 ![original fit](routing-cost3.jpg)
 
----
+^ この図ではC-Gの品質が悪化しリンクコストが100となり、E-Fで障害が発生したためリンクコストを1000としてみました。このような状況になると、最小リンクコストの経路は自動的にA-B-C-F-Gの70のみに定まるようになります。
 
+---
 # Administrative policies
 
 * For many reasons, you don't want to accept packets from some nodes, depending on the relay paths
 * For example: passing C is OK, but passing E is not: A-B-C-G and A-B-C-F-G are OK, but A-D-E-F-G is blocked
 * Common among interconnection of the autonomous systems (internet service providers and organizations)
 
+^ 同じ組織など管理方針が同じネットワークの中であればリンクコストの計算で経路制御ができますが、そうでない組織間の場合は、どの経路を通ってくるかを調べて通信を遮断したい場合があります。このような遮断要請は、接続事業者などの間で一般的に行われています。今までの図でいえば、たとえばEを通過させたくないという方針を考えてみましょう。
+
 ---
 [.background-color: #FFFFFF]
 
 ![original fit](routing-cost2-policy.jpg)
+
+^ この図ではEが遮断されている状況を考えます。このような遮断を実現するためには、リンクコストの情報ではうまくいきません。どのノードを通ったかを記録した上で、Eを通るものを明示的に識別して遮断できるようにすることが必要です。
 
 ---
 
@@ -266,6 +294,8 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 * Link-state protocol: flooding link cost information of each node throughout the network
 * Path vector protocol: exchanging path of nodes for each network instead of the link costs
 * Highly vulnerable to external attacks
+
+^ 経路情報のやり取りをするための手順あるいはプロトコルとしては、今まで説明してきたネットワーク全体にリンクコスト情報をどんどん広げていくリンクステートプロトコルというのがあります。また、リンクコストではなく使用できる中継経路を列挙していくパスベクトルプロトコルもあります。経路情報プロトコルへの攻撃は、ネットワーク運用に対して大きな被害の原因になります。
 
 ---
 
@@ -278,6 +308,8 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
   * 192.168.103.0/24
 - -> aggregated as 192.168.100.0/22
 - 4 networks together as one aggregated network
+
+^ 経路情報はインターネット全体を考えると莫大な量になります。そこで少しても経路情報の量を減らすために、集約する方法が使われています。ここに示した例では、ネットマスクが/24の連続したアドレス空間を使っている4つのネットワークを、ネットマスクが/22の1つのネットワークとして集約しています。
 
 ---
 
