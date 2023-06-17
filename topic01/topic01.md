@@ -10,6 +10,8 @@ autoscale: true
 
 <!-- Use Deckset 2.0, 16:9 aspect ratio -->
 
+^ 大阪大学基礎工学部 電気工学特別講義 2023年6月20日分 トピック01 遅延と物理法則、集中的コミュニケーション、そして多重化についての話を始めます。
+
 ---
 
 # Kenji Rikitake
@@ -22,6 +24,8 @@ On the internet
 Copyright ©2018-2023 Kenji Rikitake.
 This work is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
+^ 講師の力武 健次といいます。よろしくお願いします。
+
 ---
 
 # CAUTION
@@ -29,6 +33,9 @@ This work is licensed under a [Creative Commons Attribution 4.0 International Li
 Osaka University School of Engineering Science prohibits copying/redistribution of the lecture series video/audio files used in this lecture series.
 
 大阪大学基礎工学部からの要請により、本講義で使用するビデオ/音声ファイルの複製や再配布は禁止されています。
+
+^ 大阪大学基礎工学部からの要請により、本講義で使用するビデオ/音声ファイルの複製や再
+配布は禁止されています。ご注意ください。
 
 ---
 
@@ -39,15 +46,21 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 * Keyword at the end of the talk
 * URL for submitting the report at the end of the talk
 
+^ レクチャーノートはGitHubのこのURLに掲載しています。
+
 ---
 
 # [fit] Latency and laws of physics
+
+^ 今回はまず遅延と物理法則という話から始めます。
 
 ---
 
 # [fit] Speed of light in vacuum $$c$$
 # [fit] 299 792 458 [m/s]
 # [fit] This is a definition, *not* a measured value
+
+^ 真空中の光の速度は、毎秒299,792,458メートル、約30万キロメートルです。2019年にこの値は、国際単位系SIの定義として採用されました。実測による推定ではなく、定義されている値です。
 
 ---
 
@@ -59,9 +72,11 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 * Water: 1.3330 for λ=589.3 nm [^1] -> 224901 km/s
 * Silica glass (optic fiber): 1.45 [^2] -> 206753 km/s
 
-[^1]: 「光学的性質」、理科年表2022、丸善、ISBN: 978-4-621-30648-2, pp. 477-479
+[^1]: 「光学的性質」、理科年表2023、丸善、ISBN: 978-4-621-30736-6, pp. 479-480
 
 [^2]: <https://apniphysics.com/classroom/optical-fiber-refractive-index/>
+
+^ 物質中の光の速度は、屈折率で割った分遅くなります。屈折率は常に1以上です。空気はそんなに遅くならないんですが、水の中や光ファイバーの中だとかなり遅くなります。この速度の差を問題視する人達もいて、株式市場に関する通信応用の世界では、他人の敷地内を突っ切って光ファイバーをひたすら最短距離で引くとか、光ファイバーをやめてあえて電波にするとか、いろいろな試みが行われています。マイクロ秒の伝搬遅延が問題になるからだそうです。
 
 ---
 
@@ -73,6 +88,8 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 * *Synchronization is hard*
 * A question: can you play a network real-time game in the global scale, e.g., between Tokyo, New York, and Paris?
 
+^ 実際に遅延時間について考えてみましょう。大阪から東京までは空気中だと400キロメートル、つまり1.3ミリ秒ぐらいかかります。東京−サンフランシスコ間は8300キロメートル、つまり空気中だと28ミリ秒、石英ガラスだと41ミリ秒かかるわけです。これにより日本と米国の間は往復で100ミリ秒以上かかることが推定できます。100ミリ秒は人間が十分知覚できる時間差ですから、大陸間で同期して物事を行うというのは想像以上に難しいのです。リアルタイムなネットワークゲームを東京、ニューヨーク、パリの間でやろうとしたらどうなるかを考えてみてください。
+
 ---
 
 # Light traveling time and distance
@@ -83,9 +100,13 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 * ~30cm in 1ns aka 1GHz
 * ~3mm in 1ps aka 1THz
 
+^ 光の伝搬時間と距離、そして電線の長さと波長について考えてみます。1キロヘルツの波長は300キロメートル、1メガヘルツの波長は300メートルですが、1ギガヘルツになると30センチ、1テラヘルツになると3ミリになってしまいます。最近はスマホでも数ギガヘルツの周波数を扱うのは一般的で、より高度な5Gや6Gになると100ギガヘルツを越える周波数、つまり波長1センチメートル未満の世界に突入することになります。この世界では部品の物理的大きさが性能に影響するため、電子回路を組むのが困難になってきます。
+
 ---
 
 # [fit] Centralized communication
+
+^ 次に集中型コミュニケーションについて話します。
 
 ---
 
@@ -95,6 +116,8 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 * *The physical layer*
 * A medium could be: electric wires, optic fibers, radio airwaves, sound, flying birds like pigeons
 
+^ そもそもコミュニケーションとは何かという話ですが、2つあるいはより多数の関係者で同じ物理的な接続、あるいは物理層を共有あるいはシェアしないとコミュニケーションはできません。この接続を実現する媒体としては、電線、光ファイバー、無線の電波、音、そして伝書鳩などの空を飛ぶ鳥などのいろいろな方式が考えられます。
+
 ---
 
 ![right fit](network-nodes.png)
@@ -102,6 +125,8 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 # Connecting unconnected nodes
 
 There are many ways to connect the dots in this picture
+
+^ この図で点として示している、ネットワーク上の各ノード、つまり通信主体を接続する方法について考えてみます。いろいろな繋ぎ方があり得ます。
 
 ---
 
@@ -113,6 +138,8 @@ There are many ways to connect the dots in this picture
 - Very much susceptible to network link failures
 - Links should stay connected during the connection
 
+^ 最も単純なやり方の一つとして、スター型、あるいは集中型の接続があります。これは最も容易なやり方でもあるんですが、中心への接続が切れると全体への接続が切れてしまうので、接続あるいはリンクの障害に対してとても弱いですね。また、通信中はリンクの接続を維持しておく必要があります。
+
 ---
 
 ![original](tekniskamuseet_telefontornet.jpg)
@@ -121,6 +148,8 @@ There are many ways to connect the dots in this picture
 
 ` `
 
+^ これは1890年にスウェーデンのストックホルムで実際に使われていた電話線のための塔の写真です。この塔から各地に向けて電線を張り巡らせていたのですね。なかなか壮観です。現代で同じことをやるなら地下に埋めると思いますが。
+
 ---
 
 ![original](tekniskamuseet_jonkoping_1929.jpg)
@@ -128,6 +157,8 @@ There are many ways to connect the dots in this picture
 # Fallen telephone lines by frost at Jönköping, Sweden, 1929
 
 ` `
+
+^ この電話線に起こった障害の例として、1929年に同じスウェーデンのヨンショーピングで起こった電話線の氷結による切断の例があります。見事に全部切れてますね。寒い地方では氷あるいは雪による架線の切断の可能性を考えないといけないわけです。今なら無線、あるいは電線よりももっと軽い光ファイバーを使うかもしれません。
 
 ---
 
@@ -138,13 +169,19 @@ There are many ways to connect the dots in this picture
 
 ` `
 
+^ 余談ですが、私は2018年と2019年に、ストックホルムの技術博物館に行ってきました。日本には最近こういった博物館が減ってしまったのですが、技術の歴史とその社会的影響について知ることのできるとても良い場所です。
+
 ---
 
 # [fit] Multiplexing
 
+^ 次は、多重化という話をします。
+
 ---
 
 # Multiplexing: sharing the same link by multiple nodes and communication devices
+
+^ 多重化とは、一つのリンクあるいは接続を、複数のノードや通信デバイスで共有するための技術です。
 
 ---
 
@@ -154,9 +191,13 @@ There are many ways to connect the dots in this picture
 
 - Some links carry shared traffics for many different nodes
 
+^ 多重化が可能になると、全部を一つの中心に対してつなぐ必要がなくなります。この図では中心のノードは5つの別のノードにつながっていて、それらのノードがさらに末端のノードへの接続を提供しています。
+
 ---
 
 # How to multiplex different types of information, and put them together for sharing a same medium?
+
+^ 具体的にどのような方法で、異なる種類の情報を多重化し、同じ媒体の上で配送するかについて考えてみましょう。
 
 ---
 
@@ -167,6 +208,8 @@ There are many ways to connect the dots in this picture
 * Frequency/wavelength division
 * Polarization division
 * Code division (multiple codes of very small cross-correlation)
+
+^ 実際にはいろいろなやり方があり得ます。空間分割、つまり電線そのものを分けたり指向性を持たせたアンテナを使う方法、それから時分割、つまり通信の時間を分けて重ならないようにする方法、そして周波数あるいは波長の分割、光通信なら色を分ける方法、また電波や光であれば偏波面を分けることによる多重化、そして相互相関の非常に少ない符号列を使うことによる符号分割化という方法があります。次のトピックで話すパケット交換もこの多重化の方法の一つです。今回のトピックの話はこれで終わります。この後にキーワードがあります。
 
 ---
 
