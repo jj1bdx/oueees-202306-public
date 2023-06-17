@@ -10,6 +10,8 @@ autoscale: true
 
 <!-- Use Deckset 2.0, 16:9 aspect ratio -->
 
+^ 大阪大学基礎工学部 電気工学特別講義 2023年6月20日分 トピック03 経路制御の詳細とネットワークトランスポートに関する話を始めます。
+
 ---
 
 # Kenji Rikitake
@@ -22,6 +24,8 @@ On the internet
 Copyright ©2018-2023 Kenji Rikitake.
 This work is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
+^ 講師の力武 健次といいます。よろしくお願いします。
+
 ---
 
 # CAUTION
@@ -29,6 +33,8 @@ This work is licensed under a [Creative Commons Attribution 4.0 International Li
 Osaka University School of Engineering Science prohibits copying/redistribution of the lecture series video/audio files used in this lecture series.
 
 大阪大学基礎工学部からの要請により、本講義で使用するビデオ/音声ファイルの複製や再配布は禁止されています。
+
+^ 大阪大学基礎工学部からの要請により、本講義で使用するビデオ/音声ファイルの複製や再配布は禁止されています。ご注意ください。
 
 ---
 
@@ -39,9 +45,13 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 * Keyword at the end of the talk
 * URL for submitting the report at the end of the talk
 
+^ レクチャーノートはGitHubのこのURLに掲載しています。
+
 ---
 
 # [fit] Internet Protocol (IP) addresses
+
+^ 経路制御に関する細かい話の一つとして、IPアドレスの話をします。IPアドレスとは、インターネットにつながる各システムに一意に割り当てられる識別子のことです。ドメイン名とは違い、固定長の整数で表現されます。IPとはインターネットプロトコルの意味です。
 
 ---
 
@@ -53,6 +63,8 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 * Global uniqueness
 * Special addresses (private, broadcast, multicast, loopback, etc.)
 
+^ IPアドレスの役割としては、ネットワークの番号、それから各ノードがどのネットワークにつながっているかを示すインターフェースの番号、ネットワークの中でのホストとしての番号を示すという重層的な意味があります。一般的にはIPアドレスは世界で一つのグローバルな一意性を持ちますが、実際には直接世界にはつながらないプライベートネットワークや、マルチキャストやブロードキャストの相手を示すアドレス、そして機器自身を示すループバックアドレスなど特別な役割を持つものもあります。
+
 ---
 
 # [fit] IPv4 addresses: 32 bits
@@ -61,6 +73,8 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 
 - 4 x 0~255 numbers split with dots
 - Relatively easy to remember, but already being used up
+
+^ IPアドレスとして昔から使われているのは32ビットのIPバージョン4あるいはIPv4のアドレスです。これは32ビットの整数を8ビット毎に0から255の数で表現してドットで区切ったものです。16進数で書くとC0A86414となります。一般的なIPアドレスというとこちらを指しますが、32ビットつまり2の32乗あるいは43億個弱しか区別できないんですね。すでに世界の人口は80億を越えていますから、もはやこれではまったく足らない状態になっています。
 
 ---
 
@@ -71,6 +85,8 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 - Host: number 20 (0~255) (32-24=8)
 - Host 0 = network itself
 - Host 255 = broadcast
+
+^ このIPアドレスはどういう意味を持っているかというと、上位ビットからネットワークを示すビット長（ネットマスクともいいます）を決めて、残りをそのネットワークの中のホスト識別に使うことになっています。ここで示す192.168.100.0/24というアドレスは、ホスト識別部がゼロなので、ネットワーク自身を示します。たまたまドット区切りとネットワークの区切りがいっしょですね。なおホスト識別部のビットが全部1だと、ブロードキャストアドレスを示します。
 
 ---
 
@@ -83,6 +99,8 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 - Host 15 = broadcast
 - Different netmask = different address interpretation
 
+^ 似たようなアドレスですが意味の違う例を示します。この例ではドット区切りとネットワークの区切りがいっしょではありません。ネットワーク部は28ビットありますので、ホスト識別部は4ビットしかありません。また、ネットマスクが違うので、前のスライドの192.168.100.0/24とは違うネットワークとして認識する必要があります。
+
 ---
 
 # Private addresses (RFC1918)
@@ -91,6 +109,8 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 - 10.0.0.0/8
 - 172.16.0.0/12 (172.{16~31}.\*.\*)
 - 192.168.0.0/16 (192.168.\*.\*)
+
+^ プライベートアドレスという話をします。現在IPv4インターネットに接続されているホストの大部分はこのプライベートアドレスを使っています。プライベートアドレスには、ネットワークを外部から切り離すこと、そしてその結果としてグローバルな到達性を持ったアドレスの消費を抑える、という2つの役割があります。切り離したネットワークをインターネットに接続するにはアドレス変換(NAT)という技術を使いますが、この講義では詳細は割愛します。
 
 ---
 
@@ -107,6 +127,8 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 - 240.0.0.0/4: Reserved
 - 255.255.255.255/32: Limited broadcast
 
+^ その他にもいろいろな役割を持ったアドレスがあります。これらの役割については詳細を記した文書があります。一例として、文書に書く場合は特定の組織などを代表しないように、文書で例示するため専用のアドレス空間があります。実際に使われている電話番号を説明用のマニュアルに書いたら個人情報の漏洩になりかねないですよね。
+
 ---
 
 # [fit] IPv6 addresses: 128 bits
@@ -117,6 +139,8 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 * :xxxx: = up to 4 hex digits
 * :: = arbitrary number of 0, appearing only once in an address
 * Your lookup results may vary
+
+^ IPv4アドレスではアドレスが不足してしまうため、最近のインターネットではIPバージョン6あるいはIPv6アドレスも使われています。これは128ビット固定長の整数で、16進数4桁ごとにコロンで区切って表します。0が続く部分は一度だけコロン2つで省略できるようになっています。例示したのは最近確認したwww.google.comのアドレスです。
 
 ---
 
@@ -129,6 +153,8 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 * Broadcast -> multicast addresses
 * ff02::1 = all hosts, ff02::2 = all routers, etc.
 
+^ このアドレスですが、慣例としてネットマスクは64ビットとして使われています。これだけあればアドレスの不足は当分ないだろうと考えられています。ネットワーク自身はIPv4と同様ホスト識別部あるいは下位64ビットが0で表現されますが、IPv4で使われていたブロードキャストアドレスはIPv6ではマルチキャスト専用のネットワーク識別子を使うように変わりました。
+
 ---
 
 # Why IPv4 to IPv6?
@@ -138,6 +164,8 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 - You need to buy unused blocks from other users
 - Took ~20 years (1996-2016) for the transition from IPv4 to IPv6
 - IPv6 has less users and nodes; plausibly faster
+
+^ なぜIPv4とIPv6が並立しているかについて説明します。IPv4のアドレスはもう新規に割り当てる場所がなく、使わなくなったアドレスは市場で高値で取り引きされている状況です。ですので、大規模な新規ネットワークアプリケーションはIPv6アドレスを使うことが増えました。IPv6が提案されてから移行普及に実質20年かかっていますが、未だにIPv4アドレスを前提としたサービスも多数残っており、IPv6の規模そのものはIPv4に比べて小さな状況が続いています。
 
 ---
 
