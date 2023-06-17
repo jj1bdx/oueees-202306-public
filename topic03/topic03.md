@@ -103,7 +103,7 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 
 ---
 
-# Private addresses (RFC1918)
+# Private addresses (RFC 1918)
 # [fit] No global routing for these address blocks
 
 - 10.0.0.0/8
@@ -114,7 +114,7 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 
 ---
 
-# Other special addresses (RFC6890)
+# Other special addresses (RFC 6890)
 
 - 0.0.0.0/8: "This" network
 - 100.64.0.0/10: Shared address
@@ -171,7 +171,7 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 
 # [fit] Routing in details
 
-^ ここからは経路制御の細かい話をします。
+^ ここからは経路制御のやり方に関する細かい話をします。
 
 ---
 
@@ -315,6 +315,8 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 
 # [fit] Network transports
 
+^ ここからはネットワークトランスポートの話をします。トランスポートというのは、IPパケットの上で情報を効率良く運ぶためのプロトコルのことです。
+
 ---
 
 # IP address and the port number
@@ -323,16 +325,20 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 * HTTPS = 443, DNS = 53, SSH = 22, etc.
 * A pair of IP address and port number defines an endpoint of communication
 
+^ インターネットではポート番号というのがあって、それぞれのサービスやアプリケーションには16ビットのポート番号が割り当てられます。例としてHTTPSは443番、DNSは53番です。IPアドレスとポート番号の組で通信のそれぞれの端点あるいはエンドポイントを示すことができます。
+
 ---
 
 # UDP and TCP
 
 * Two major transport protocols on the internet
 * User Datagram Protocol (UDP, RFC 768): connection-less
-* Transport Control Protocol (TCP, RFC 9293): connection-oriented
+* Transmission Control Protocol (TCP, RFC 9293): connection-oriented
   - Obsoleted RFCs: 793, 879, 2873, 6093, 6429, 6528, 6691
 * See <https://www.rfc-editor.org> for all the internet RFCs
 * RFC: Request for Comment
+
+^ 代表的なトランスポートプロトコルとして、UDPとTCPがあります。UDPはコネクションを行わないコネクションレスプロトコルで、TCPはコネクションを張って仮想的なストリーム通信路を作るプロトコルです。インターネットでRequest for Comment (RFC)という文書で標準化された規格を示すのですが、最近TCPは仕様の改訂が行われて番号が変わりました。
 
 ---
 
@@ -344,6 +350,8 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 * The content of the packet may get altered or damaged
 * Packet size has the limitation
 
+^ パケット交換でできることの限界についておさらいしてみます。まずパケットは常に届くとは限りません。届く順番も送信した順番とは変わっている可能性があります。そして同じパケットが何度も受信されてしまう可能性もあります。パケットの中身は情報が書き変わっているかもしれません。またパケットにできる情報の大きさには限界があります。
+
 ---
 
 # What UDP does
@@ -352,9 +360,13 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 * Send it in an IP packet
 * ... and that's it
 
+^ UDPは何をしているのかについてですが、基本的にはポート番号のついたヘッダを加えて、それをIPパケットの中に入れて終わりという単純な構造になっています。
+
 ---
 
 ![fit](1280px-UDP_encapsulation.svg.jpg)
+
+^ これはUDPパケットを図で示したものですが、IPヘッダで送受信アドレスを表現し、UDPヘッダでポート番号を示すだけといった構造を示しています。これによって、パケットはほぼそのままの姿でアプリケーションに届けられます。再送や順番の管理といったことはUDPの制御としては一切行われません。
 
 ---
 
@@ -367,9 +379,11 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 * UDP datagram has the size limit: suitable for relatively small messages
 * Very small additional latency
 
+^ UDPの欠点と利点について見てみましょう。まず到達は保証されないのでデータグラム（これはパケットとほぼ同義です）はなくなる可能性があります。また同じデータグラムが複数回届いてしまう可能性があります。ただしUDPデータグラムの配送で情報の改変が起こった場合は検知できます。データグラムの大きさには上限があります。プロトコルが簡単なので遅延は小さいです。なので、UDPの上に別のトランスポートプロトコルを作る用途にも使われます。
+
 ---
 
-# Transport control protocol (TCP)
+# Transmission control protocol (TCP)
 
 * Detect packet loss by timeout
 * Split stream into segments
@@ -377,9 +391,13 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 * Reassemble segments to the stream
 * Perform congestion control
 
+^ 次はTCPについて見ていきます。TCPではパケットの到着時間に上限つまりタイムアウトを設けることで、到着しないことを検出し、再送を要求します。またストリームをセグメントに分割し、各々のセグメントにシーケンス番号をつけることで、受信したパケットから順番を揃えてストリームを再構築することができます。さらに再送のタイミングを変えることで、伝送路が込み合っている場合のさらなる輻輳を防ぐ仕組みが入っています。
+
 ---
 
 ![fit](Tcp_transport_example.gif)
+
+^ この図はTCPによるストリーム伝送の様子です。右から左にパケットが送られていきます。最初に1460バイトのパケットが送られ、無事受信できたので1461バイト目からの情報要求が受信側から送られます。2番目のパケットからは同様に情報が特に毎回確認せずに送り続けられますが、3番目のパケットが到達していないため、3番目のパケット受信のタイムアウトが発生した時点で2921バイト目からの情報を再送して欲しいという要求が受信側から出ます。これに応じて送信側が3番目のパケットを再送した時点で受信側で7300バイト分の情報がすべて受信できたので、その旨受信側から送信側に確認パケットが送信されます。この受信側からのパケットが受信されて、やっと送信側は7301バイト目からの送信を続けることができます。このようにして通信の信頼性を確保しています。
 
 ---
 
@@ -392,9 +410,11 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 * The stream will accept data so long as the connection is alive
 * Data delivery may delay if retransmission occurs
 
+^ TCPの利点と欠点について述べます。コネクションを張っている間は、情報が欠けたことが検出され再送により回復されることが保証されます。順番も保証されますし、同じ内容が重複することもありません。誤りが検出された場合も再送によって修復されます。コネクションが生きている間はストリームはデータを受けつけます。ただし再送やタイムアウトのせいで、データが伝わるのが遅れる可能性は常にあります。
+
 ---
 
-# Web: HTTP/3: HTTP2 over QUIC
+# Web: HTTP/3: HTTP/2 over QUIC
 
 * People wants *speed* and *smaller latency*
 * HTTP/2 (RFC 7540): TCP-bound, stream aggregation and content compression
@@ -402,15 +422,20 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 * HTTP/2 had *head-of-line blocking problem* by TCP
 * HTTP/3 (RFC 9114): HTTP/2 over QUIC (supported by most browsers already)
 
+^ もともとWebの伝送プロトコルであるHTTPはTCPの上に作られましたが、より速く遅延の少ないプロトコルが求められました。そこでHTTP/2で複数のデータストリームをまとめて圧縮するようになりました。しかしHTTP/2では次のスライドで説明するHead-of-lineブロッキング問題があり、これを避けるためにHTTP/2と連携するトランスポートプロトコルQUICがUDPの上に作られました。そして今はこれらを統合したHTTP/3が普通に使われるようになっています。
+
 ---
 
-![right,fit](HOL_blocking.png)
-
-# Buffering and head-of-line (HOL) blocking
+# Buffering and head-of-line (HOL) blocking on HTTP/2 [^1]
 
 * Buffering causes only the oldest packets to be forwarded
-* Newer packets could be forwarded without HOL blocking
-* In this example, moving buffers to output ports will avoid the delay for Output 3 at Input 1, blocked by the contention of Output 4
+* HTTP/2 uses single stream TCP for multiple HTTP requests and responses
+* If TCP has retransmission, all the request-response exchanges will be halted until the lost data is recovered
+* QUIC solved this problem by multiplexing multiple HTTP exchanges over the UDP datagrams
+
+[^1]: Wikipedia contributors, [Head-of-line blocking: In reliable byte streams](<https://en.wikipedia.org/w/index.php?title=Head-of-line_blocking&oldid=1152996814>), Wikipedia, The Free Encyclopedia, 3 May 2023, 15:52 UTC [accessed 17 June 2023]
+
+^ Head-of-lineブロッキング問題について説明します。バッファを使った欠損データの回復を行おうとすると、欠損が発生した以降のデータは欠損が回復するまで転送されません。HTTP/2では一つのTCPストリームに複数のHTTPの処理要求と応答を乗せていたため、TCPで再送が発生すると、それが回復するまですべてのストリームが止まってしまうという問題がありました。これがHTTP/2上のhead-of-lineブロッキング問題です。QUICではこの問題をUDPデータグラムの上で複数のHTTPの通信を多重化することで解決しています。今回のトピックの話はこれで終わります。この後にキーワードがあります。
 
 ---
 
@@ -420,7 +445,6 @@ Osaka University School of Engineering Science prohibits copying/redistribution 
 * Photos are from Unsplash.com unless otherwise noted
 * UDP Encapsulation: [en:User:Cburnett original work, colorization by en:User:Kbrose, from Wikimedia Commons](https://commons.wikimedia.org/wiki/File:UDP_encapsulation.svg), CC BY-SA 3.0
 * TCP Transport: [By Huage.chen from Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Tcp_transport_example.gif), CC BY-SA 3.0
-* Head-of-line Blocking: [By Moorcock from Wikipedia](https://en.wikipedia.org/wiki/File:HOL_blocking.png), Public Domain
 
 <!-- Photo and image credits here -->
 
