@@ -1,5 +1,5 @@
 theme: Plain Jane, 2
-footer: Kenji Rikitake / oueees 20230620 topic06
+footer: Kenji Rikitake / oueees 20230627 topic06
 slidenumbers: true
 autoscale: true
 
@@ -11,13 +11,13 @@ autoscale: true
 
 <!-- Use Deckset 2.0, 16:9 aspect ratio -->
 
-^ 大阪大学基礎工学部 電気工学特別講義 2023年6月20日分 トピック06 無線とインターネット、情報戦と無線による監視、そしてAIとその現実についての話を始めます。
+^ 大阪大学基礎工学部 電気工学特別講義 2023年6月27日分 トピック06 無線とインターネット、情報戦と無線による監視、そしてAIとその現実についての話を始めます。
 
 ---
 
 # Kenji Rikitake
 
-20-JUN-2023
+27-JUN-2023
 School of Engineering Science, Osaka University
 On the internet
 @jj1bdx

@@ -1,5 +1,5 @@
 theme: Plain Jane, 2
-footer: Kenji Rikitake / oueees 20230620 topic05
+footer: Kenji Rikitake / oueees 20230627 topic05
 slidenumbers: true
 autoscale: true
 
@@ -9,13 +9,13 @@ autoscale: true
 
 <!-- Use Deckset 2.0, 16:9 aspect ratio -->
 
-^ 大阪大学基礎工学部 電気工学特別講義 2023年6月20日分 トピック05 ネットワークサービスとプログラミングのトレンドについての話を始めます。
+^ 大阪大学基礎工学部 電気工学特別講義 2023年6月27日分 トピック05 ネットワークサービスとプログラミングのトレンドについての話を始めます。
 
 ---
 
 # Kenji Rikitake
 
-20-JUN-2023
+27-JUN-2023
 School of Engineering Science, Osaka University
 On the internet
 @jj1bdx
