@@ -2,7 +2,7 @@
 
 * 大阪大学 基礎工学部 電気工学特別講義 2023年度
 * Kenji Rikitake / 力武 健次
-* Latest revision: 13-JUN-2023
+* Latest revision: 19-JUN-2023
 
 ## Talk style / 講義のスタイル
 
@@ -19,6 +19,10 @@ Since 2020, I've been delivering the lectures in asynchronous format as a series
 *Caution: Osaka University School of Engineering Science prohibits copying/redistribution of the lecture series video/audio files used in this lecture series.* The license of this repository is *not applied* to the lecture video/audio files.
 
 大阪大学基礎工学部からの要請により、本講義で使用するビデオ/音声ファイルの複製や再配布は禁止されています。本レポジトリのライセンスは講義のビデオ/音声ファイルには適用されません。
+
+The slide PDFs and the Markdown text files for the slides including the brief presentator notes are placed under each topic directory.
+
+スライドPDFとプレゼンターノートを含んだスライド用のマークダウン原稿テキストは各トピックのディレクトリに配置しています。
 
 ## Main theme: Information Delivery on Internet / インターネットの情報伝送
 
